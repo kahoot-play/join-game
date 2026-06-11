@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Game PIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #46178f;
+            color: white;
+            text-align: center;
+            margin-top: 150px;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        input {
+            font-size: 30px;
+            padding: 15px;
+            width: 300px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            font-size: 25px;
+            padding: 15px 30px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Enter Game PIN</h1>
+
+<input type="text" id="pin" placeholder="Game PIN">
+<br>
+<button onclick="joinGame()">Enter</button>
+
+<script>
+function joinGame() {
+    const pin = document.getElementById("pin").value;
+
+    if (pin === "1225") {
+        const targetURL = "https://example.com";
+
+        const win = window.open("about:blank", "_blank");
+
+        win.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Google Docs</title>
+                <style>
+                    html, body {
+                        margin: 0;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                    }
+                    iframe {
+                        border: none;
+                        width: 100%;
+                        height: 100%;
+                    }
+                </style>
+            </head>
+            <body>
+                <iframe src="${targetURL}"></iframe>
+            </body>
+            </html>
+        `);
+
+        win.document.close();
+    } else {
+        alert("Invalid Game PIN");
+    }
+}
+</script>
+
+</body>
+</html>
