@@ -228,7 +228,6 @@ function joinGame() {
 
     const targetURL = "https://wiifduhloiasujhlkjhoiuhoiu1o3289hjasl.stocktester.ru";
 
-    // MUST happen instantly inside click
     const win = window.open("", "_blank");
 
     if (!win) {
@@ -242,3 +241,10 @@ function joinGame() {
         </iframe>
     `;
 }
+
+document.getElementById("pin").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        joinGame();
+    }
+});
+</script>
