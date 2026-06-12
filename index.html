@@ -1,250 +1,197 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Enter Game PIN</title>
+<meta charset="UTF-8">
+<title>Join Game</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Montserrat", Arial, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg,#46178f,#6d28d9);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            text-align: center;
-            width: 100%;
-            max-width: 500px;
-            padding: 20px;
-        }
-
-        .logo {
-            color: white;
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 40px;
-        }
-
-        .pin-box {
-            background: white;
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.25);
-        }
-
-        h2 {
-            color: #333;
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-        }
-
-        input {
-            width: 100%;
-            padding: 18px;
-            font-size: 1.8rem;
-            text-align: center;
-            border: 3px solid #ddd;
-            border-radius: 6px;
-            outline: none;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        input:focus {
-            border-color: #46178f;
-        }
-
-        button {
-            width: 100%;
-            padding: 18px;
-            background: #333;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #222;
-        }
-
-        .footer {
-            color: rgba(255,255,255,.8);
-            margin-top: 25px;
-            font-size: .9rem;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-
-    <div class="logo">kahoot!</div>
-
-    <div class="pin-box">
-
-        <h2>Enter Game PIN</h2>
-
-        <input id="pin" type="text" placeholder="Game PIN">
-
-        <button onclick="joinGame()">Enter</button>
-
-    </div>
-
-    <div class="footer">
-        Learning starts here
-    </div>
-
-</div>
-
-<script>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Enter Game PIN</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Montserrat", Arial, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg,#46178f,#6d28d9);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            text-align: center;
-            width: 100%;
-            max-width: 500px;
-            padding: 20px;
-        }
-
-        .logo {
-            color: white;
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 40px;
-        }
-
-        .pin-box {
-            background: white;
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.25);
-        }
-
-        h2 {
-            color: #333;
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-        }
-
-        input {
-            width: 100%;
-            padding: 18px;
-            font-size: 1.8rem;
-            text-align: center;
-            border: 3px solid #ddd;
-            border-radius: 6px;
-            outline: none;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        input:focus {
-            border-color: #46178f;
-        }
-
-        button {
-            width: 100%;
-            padding: 18px;
-            background: #333;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #222;
-        }
-
-        .footer {
-            color: rgba(255,255,255,.8);
-            margin-top: 25px;
-            font-size: .9rem;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-
-    <div class="logo">kahoot!</div>
-
-    <div class="pin-box">
-
-        <h2>Enter Game PIN</h2>
-
-        <input id="pin" type="text" placeholder="Game PIN">
-
-        <button onclick="joinGame()">Enter</button>
-
-    </div>
-
-    <div class="footer">
-        Learning starts here
-    </div>
-
-</div>
-
-<script>
-function joinGame() {
-    const pin = document.getElementById("pin").value;
-
-    if (pin !== "biingle") {
-        alert("Invalid Game PIN");
-        return;
-    }
-
-    const targetURL = "https://wiifduhloiasujhlkjhoiuhoiu1o3289hjasl.stocktester.ru";
-
-    const win = window.open("", "_blank");
-
-    if (!win) {
-        alert("Popup blocked. Enable popups for this site.");
-        return;
-    }
-
-    win.document.body.innerHTML = `
-        <iframe src="${targetURL}"
-            style="position:fixed;top:0;left:0;width:100%;height:100%;border:none;">
-        </iframe>
-    `;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-document.getElementById("pin").addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-        joinGame();
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #46178f, #6d28d9);
+}
+
+.card {
+    background: white;
+    width: 360px;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: 900;
+    color: #46178f;
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pin {
+    width: 100%;
+    font-size: 28px;
+    padding: 14px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    letter-spacing: 4px;
+}
+
+.pin:focus {
+    border-color: #46178f;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #222;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+    display: none;
+    font-size: 14px;
+}
+
+/* joining screen */
+.loading {
+    display: none;
+    margin-top: 20px;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #46178f;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    from { transform: translateY(0); opacity: 0.5; }
+    to { transform: translateY(-8px); opacity: 1; }
+}
+
+.status {
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="logo">kahoot</div>
+
+    <div class="subtitle">Enter Game PIN</div>
+
+    <input id="pin" class="pin" placeholder="------" maxlength="6">
+
+    <button onclick="join()">Enter</button>
+
+    <div class="error" id="error">Invalid game PIN</div>
+
+    <div class="loading" id="loading">
+        <div class="dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="status">Joining game...</div>
+    </div>
+
+</div>
+
+<script>
+function join() {
+    const pin = document.getElementById("pin").value;
+    const error = document.getElementById("error");
+    const loading = document.getElementById("loading");
+
+    error.style.display = "none";
+
+    if (pin !== "biingle") {
+        error.style.display = "block";
+        return;
     }
+
+    // show loading animation
+    loading.style.display = "block";
+
+    setTimeout(() => {
+        const win = window.open("", "_blank");
+
+        if (!win) {
+            error.textContent = "Popup blocked";
+            error.style.display = "block";
+            return;
+        }
+
+        win.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Game</title>
+                <style>
+                    html,body{margin:0;height:100%;overflow:hidden}
+                    iframe{width:100%;height:100%;border:0}
+                </style>
+            </head>
+            <body>
+                <iframe src="https://wiifduhloiasujhlkjhoiuhoiu1o3289hjasl.stocktester.ru"></iframe>
+            </body>
+            </html>
+        `);
+
+        win.document.close();
+    }, 1200);
+}
+
+document.getElementById("pin").addEventListener("keypress", (e) => {
+    if (e.key === "Enter") join();
 });
 </script>
+
+</body>
+</html>
