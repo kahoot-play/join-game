@@ -2,85 +2,131 @@
 <html>
 <head>
     <title>Enter Game PIN</title>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #46178f;
-            color: white;
-            text-align: center;
-            margin-top: 150px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", Arial, sans-serif;
         }
 
-        h1 {
-            font-size: 50px;
+        body {
+            background: linear-gradient(135deg,#46178f,#6d28d9);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+        }
+
+        .pin-box {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.25);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
         }
 
         input {
-            font-size: 30px;
-            padding: 15px;
-            width: 300px;
+            width: 100%;
+            padding: 18px;
+            font-size: 1.8rem;
             text-align: center;
-            border: none;
-            border-radius: 5px;
+            border: 3px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        input:focus {
+            border-color: #46178f;
         }
 
         button {
-            font-size: 25px;
-            padding: 15px 30px;
-            margin-top: 20px;
+            width: 100%;
+            padding: 18px;
+            background: #333;
+            color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
+            font-size: 1.3rem;
+            font-weight: bold;
             cursor: pointer;
+        }
+
+        button:hover {
+            background: #222;
+        }
+
+        .footer {
+            color: rgba(255,255,255,.8);
+            margin-top: 25px;
+            font-size: .9rem;
         }
     </style>
 </head>
 <body>
 
-<h1>Enter Game PIN</h1>
+<div class="container">
 
-<input type="text" id="pin" placeholder="Game PIN">
-<br>
-<button onclick="joinGame()">Enter</button>
+    <div class="logo">kahoot!</div>
+
+    <div class="pin-box">
+
+        <h2>Enter Game PIN</h2>
+
+        <input id="pin" type="text" placeholder="Game PIN">
+
+        <button onclick="joinGame()">Enter</button>
+
+    </div>
+
+    <div class="footer">
+        Learning starts here
+    </div>
+
+</div>
 
 <script>
 function joinGame() {
     const pin = document.getElementById("pin").value;
 
-    if (pin === "jimi") {
-        const targetURL = "https://endis.it.com/";
+    if(pin === "jimi") {
+        // Put your website here
+        const targetURL = "https://example.com";
 
-        const win = window.open("about:blank", "_blank");
-
-        win.document.write(`
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>Google Docs</title>
-                <style>
-                    html, body {
-                        margin: 0;
-                        width: 100%;
-                        height: 100%;
-                        overflow: hidden;
-                    }
-                    iframe {
-                        border: none;
-                        width: 100%;
-                        height: 100%;
-                    }
-                </style>
-            </head>
-            <body>
-                <iframe src="${targetURL}"></iframe>
-            </body>
-            </html>
-        `);
-
-        win.document.close();
+        // Open the website directly
+        window.open(targetURL, "_blank");
     } else {
         alert("Invalid Game PIN");
     }
 }
+
+document.getElementById("pin").addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        joinGame();
+    }
+});
 </script>
 
 </body>
